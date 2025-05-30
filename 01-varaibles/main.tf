@@ -51,14 +51,14 @@ output "command-line" {
 ##terraform apply -auto-approve -var.file=env.tfvar
 variable "terraformtfvards" {}
 
-output "Test Terraform Vars" {
+output "TestTerraformVars" {
   value = var.terraformtfvards
 }
 
 ## Varaibles from file
 variable "terraformvarfromfile" {}
 
-output "Test Terraform Vars" {
+output "TestTerraformVars" {
   value = var.terraformvarfromfile
 }
 
