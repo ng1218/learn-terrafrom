@@ -48,23 +48,22 @@ output "command-line" {
 }
 
 ##Variable from terraform.tfvars
-##terraform apply -auto-approve -var.file=env.tfvar
-variable "terraformtfvards" {}
+variable "env" {}
 
-output "TestTerraformVars" {
-  value = var.terraformtfvards
+output "env" {
+  value = var.env
 }
 
 ## Varaibles from file
-variable "terraformvarfromfile" {}
+variable "v1" {}
 
-output "TestTerraformVarsFromFile" {
-  value = var.terraformvarfromfile
+output "v1" {
+  value = var.v1
 }
 
 ##{file-name}-auto.tfvars
-variable "autoapprovevars" {}
+variable "server-count" {}
 
-output "TestTerraformVarsAutovars" {
-  value = var.autoapprovevars
+output "server-count" {
+  value = var.server-count
 }
