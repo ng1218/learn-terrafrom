@@ -58,13 +58,13 @@ output "TestTerraformVars" {
 ## Varaibles from file
 variable "terraformvarfromfile" {}
 
-output "TestTerraformVars" {
+output "TestTerraformVarsFromFile" {
   value = var.terraformvarfromfile
 }
 
 ##{file-name}-auto.tfvars
 variable "autoapprovevars" {}
 
-output "TestTerraformVars" {
+output "TestTerraformVarsAutovars" {
   value = var.autoapprovevars
 }
