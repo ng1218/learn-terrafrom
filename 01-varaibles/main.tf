@@ -65,6 +65,6 @@ output "TestTerraformVars" {
 ##{file-name}-auto.tfvars
 variable "autoapprovevars" {}
 
-output "Test Terraform Vars" {
+output "TestTerraformVars" {
   value = var.autoapprovevars
 }
