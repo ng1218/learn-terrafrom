@@ -33,5 +33,5 @@ variable "datatypes1" {
 }
 
 output "datatypes1" {
-  value = var.datatypes["z"]
+  value = var.datatypes1["z"]
 }
