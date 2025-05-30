@@ -3,7 +3,7 @@ variable "test" {
   
 }
 
-output "test1" {
+output "test" {
   value = var.test
 }
 
