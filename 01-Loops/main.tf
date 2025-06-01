@@ -20,7 +20,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_virtual_machine" "frontend-test" {
-  count                 =  lenght(var.nodes)
+  count                 =  length(var.nodes)
   name                  = "${var.nodes[count.index]}-test"
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
