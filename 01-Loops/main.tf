@@ -1,5 +1,5 @@
 resource "null_resource" "looptest" {
-  count = 10
+  count = 2
 }
 
 output "looptest" {
