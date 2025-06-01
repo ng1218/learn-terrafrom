@@ -19,7 +19,7 @@ provider "azurerm" {
   subscription_id = "1c8859e3-276f-40f1-afc9-1dd8f8dc18d7"
 }
 
-resource "azurerm_virtual_machine" "frontend-test" {
+resource "azurerm_virtual_machine" "test" {
   count                 =  length(var.nodes)
   name                  = "${var.nodes[count.index]}-test"
   location              = "UK West"
