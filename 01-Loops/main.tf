@@ -1,12 +1,3 @@
-resource "null_resource" "looptest" {
-  count = 1
-}
-
-output "looptest" {
-    value = null_resource.looptest[*].id
-  
-}
-
 variable "nodes" {
     default = [
         "test1",
