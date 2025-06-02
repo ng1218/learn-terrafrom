@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_network_interface" "privateip" {
-  for_each            = var.nodes
+  count               = length(var.nodes)
   name                = "${var.nodes[count.index]}-ip"
   location            = "UK West"
   resource_group_name = "myfirstvm_group"
