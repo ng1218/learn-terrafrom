@@ -11,9 +11,22 @@ provider "azurerm" {
   subscription_id = "1c8859e3-276f-40f1-afc9-1dd8f8dc18d7"
 }
 
+resource "azurerm_network_interface" "privateip" {
+  for_each            = var.nodes
+  name                = "${var.nodes[count.index]}-ip"
+  location            = "UK West"
+  resource_group_name = "myfirstvm_group"
+
+  ip_configuration {
+    name                          = "${var.nodes[count.index]}-ip"
+    subnet_id                     = "/subscriptions/1c8859e3-276f-40f1-afc9-1dd8f8dc18d7/resourceGroups/myfirstvm_group/providers/Microsoft.Network/virtualNetworks/myfirstvm-vnet/subnets/default"
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
 resource "azurerm_virtual_machine" "test" {
   count                 =  length(var.nodes)
-  name                  = "${var.nodes[count.index]}-test"
+  name                  = "${var.nodes[count.index]}-vm"
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
   network_interface_ids = ["/subscriptions/1c8859e3-276f-40f1-afc9-1dd8f8dc18d7/resourceGroups/myfirstvm_group/providers/Microsoft.Network/networkInterfaces/terraform-test"]
