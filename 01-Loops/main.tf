@@ -15,7 +15,7 @@ variable "nodes" {
 }
 
 output "nodes" {
-    value = null_resource.looptest[*].value
+    value = null_resource.looptest[*]
   
 }
 
