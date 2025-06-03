@@ -4,7 +4,7 @@ variable "nodes" {
         vm_size = "Standard_B2s"
       }
       "test2" = {
-        vm_size = "Standard_B2l"
+        vm_size = "Standard_B2s"
       }
     }
 }
