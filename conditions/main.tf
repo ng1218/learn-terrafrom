@@ -33,7 +33,7 @@ resource "azurerm_virtual_machine" "test" {
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
   network_interface_ids = [azurerm_network_interface.privateip[each.key].id]
-  vm_size               = "Standard_B2s"
+  vm_size               = each.value["vm_size"]
 
   delete_os_disk_on_termination = true
 
@@ -44,7 +44,7 @@ resource "azurerm_virtual_machine" "test" {
     name              = "${each.key}-test-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
-    managed_disk_type = each.value["vm_size"]
+    managed_disk_type = "Standard_LRS"
   }
   os_profile {
     computer_name  = "${each.key}-test"
