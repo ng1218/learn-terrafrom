@@ -28,8 +28,7 @@ resource "azurerm_network_interface" "privateip" {
 }
 
 resource "azurerm_virtual_machine" "test" {
-  for_each              = var.nodes
-  count                 =  length(var.nodes)
+  for_each              =  var.nodes
   name                  = "${each.key}.vm"
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
