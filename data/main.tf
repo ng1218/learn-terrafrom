@@ -8,6 +8,6 @@ data "azurerm_resource_group" "test" {
 }
 
 output "test" {
-    value = data.azurerm_resource_group.test.id
+    value = data.azurerm_resource_group.test.location
   
 }
