@@ -16,7 +16,7 @@ provider "azurerm" {
 
 resource "azurerm_network_interface" "privateip" {
   for_each            = var.nodes
-  name                = each.key.ip
+  name                = "${each.key}.ip"
   location            = "UK West"
   resource_group_name = "myfirstvm_group"
 
@@ -29,7 +29,7 @@ resource "azurerm_network_interface" "privateip" {
 
 resource "azurerm_virtual_machine" "test" {
   count                 =  length(var.nodes)
-  name                  = "${var.nodes[count.index]}-vm"
+  name                  = "${each.key}.vm"
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
   network_interface_ids = [azurerm_network_interface.privateip[each.key].id]
