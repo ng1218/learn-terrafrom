@@ -11,6 +11,6 @@ data "vault_generic_secret" "secret" {
 
 resource "local_file" "foo" {
   content  = jsonencode(data.vault_generic_secret.secret.data)
-  filename = "tmp/vault-secrets"
+  filename = "tmp/vault"
 }
 
