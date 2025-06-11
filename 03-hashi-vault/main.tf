@@ -7,7 +7,7 @@ data "vault_generic_secret" "secret" {
 }
 
 resource "local_file" "foo" {
-  content  = data.vault_generic_secret.secret
+  content  = data.vault_generic_secret.secret.data_json
   filename = "tmp/vault-secrets"
 }
 
