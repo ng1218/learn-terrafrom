@@ -16,5 +16,5 @@ resource "local_file" "foo" {
 
 output "secret" {
     value = data.vault_generic_secret.secret.data["username"]
-  
+    sensitive = false
 }
