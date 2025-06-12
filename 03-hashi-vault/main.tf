@@ -14,3 +14,7 @@ resource "local_file" "foo" {
   filename = "tmp/vault"
 }
 
+output "secret" {
+    value = data.vault_generic_secret.secret.data["username"]
+  
+}
