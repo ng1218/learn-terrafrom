@@ -1,67 +1,41 @@
-variable "test" {
-    default = 100
-  
+variable "x" {
+  default = 10
 }
 
-output "test" {
-  value = var.test
+variable "stringTest" {
+  default = "test string variable"
 }
 
-# Variable data types
-
-variable "datatypes" {
-  default = [
-    1,
-    2,
-    "test",
-    true
-  ]
-
-}
-
-output "datatypes" {
-  value = var.datatypes[1]
-}
-
-variable "datatypes1" {
+variable "ListTest" {
   default = {
     x = 10
-    y = 20
-    z = "test"
+    y = "Test"
+    z = true
   }
-  
 }
 
-output "datatypes1" {
-  value = var.datatypes1["z"]
+output "test1" {
+  value = var.stringTest
 }
 
-
-## Variable from command line
-
-variable "cli" {
-  
+output "printList" {
+  value = var.ListTest["y"]
 }
+
+variable "cli" {}
 
 output "command-line" {
   value = var.cli
 }
 
-##Variable from terraform.tfvars
+//Variable from file
 variable "env" {}
 
 output "env" {
   value = var.env
 }
 
-## Varaibles from file
-variable "v1" {}
-
-output "v1" {
-  value = var.v1
-}
-
-##{file-name}-auto.tfvars
+//Default Variables
 variable "server-count" {}
 
 output "server-count" {
